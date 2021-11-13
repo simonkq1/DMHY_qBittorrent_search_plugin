@@ -48,7 +48,7 @@ class dmhyorg(object):
         def get_data(url):
             highlight = re_compile('<span class="keyword">([^<]+)</span>')
             get_next = re_compile('(?s)"fl".+href="([^"]+)">下一')
-            get_item = re_compile('(?m)<a href="(/topics/view/[^"]+)"[^>]+>\s*([^<]*)</a>(?:\s*.*){2}(magnet:[^"]+)".*\s*.*>([\d\.]+)(\w+)</td[^/]+btl_1">([\d-]+)</span></td>\s*[^/]+bts_1">([\d-]+)<')
+            get_item = re_compile('(?m)<a href="(/topics/view/[^"]+)"[^>]+>\s*(.+[^<]*)</a>(?:\s*.*){3}(magnet:[^"]+)".*\s*.*>\s*</td>\s*<td.*\s*.*>([\d\.]+)(\w+)</td[^/]+btl_1">([\d-]+)</span></td>\s*[^/]+bts_1">([\d-]+)<')
             html = retrieve_url(url)
             next_page = get_next.search(html)
             # clear highlighting
